@@ -1,89 +1,216 @@
-/* Variabler */
+// Variables
 $primary-color: #3498db;
 $secondary-color: #2c3e50;
-$border-radius: 5px;
-$mobile-breakpoint: 600px;
+$light-gray: #f5f5f5;
+$dark-gray: #333;
+$border-radius: 8px;
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$mobile-breakpoint: 768px;
 
-/* Grundstilar */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+// Base styles
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: $dark-gray;
+    background-color: $light-gray;
+    padding: 0;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    color: #333;
 }
 
-/* Bildstilar */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-    border-radius: $border-radius;
-}
+// Header
+.header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $primary-color;
 
-.about-me {
-    img {
-        width: 200px;
-        border: 2px solid $primary-color;
+    h1 {
+        color: $secondary-color;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        color: $primary-color;
+        font-size: 1.2rem;
+        font-weight: 500;
     }
 }
 
+// Common section styles
 .section {
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 25px;
     margin-bottom: 30px;
-    
-    &.project {
-        img {
-            width: 400px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: $secondary-color;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $light-gray;
+    }
+}
+
+// About section
+.about-section {
+    .about-content {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @media (max-width: $mobile-breakpoint) {
+            flex-direction: column;
+        }
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid $primary-color;
+    }
+
+    .about-text {
+        flex: 1;
+
+        p {
+            margin-bottom: 15px;
         }
     }
 }
 
-/* Tabellstilar */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+// Education section
+.education-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $light-gray;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
     }
-    
-    th {
-        background-color: $secondary-color;
-        color: white;
+
+    h3 {
+        color: $primary-color;
+        margin-bottom: 5px;
     }
-    
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
+
+    .education-duration {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 5px;
     }
 }
 
-/* Video-container */
-.video {
-    iframe {
+// Skills table
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+
+    table {
         width: 100%;
-        min-height: 400px;
-        border: none;
+        border-collapse: collapse;
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: $secondary-color;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+// Project section
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .project-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
         border-radius: $border-radius;
+        border: 1px solid #ddd;
     }
 }
 
-/* Responsiv design */
-@media (max-width: $mobile-breakpoint) {
-    .about-me img,
-    .project img {
+// Video section
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: $border-radius;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
+        height: 100%;
+        border: none;
     }
-    
-    .video iframe {
-        min-height: 250px;
+}
+
+.video-description {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+// Footer
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+// Responsive adjustments
+@media (max-width: $mobile-breakpoint) {
+    .header {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .section {
+        padding: 20px 15px;
+    }
+
+    .about-section {
+        .profile-img {
+            width: 200px;
+            height: 200px;
+        }
     }
 }

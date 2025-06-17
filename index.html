@@ -1,62 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsida</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Alexander Svensson | Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="about-me">
-        <h1>About me</h1>
-        <img src="alex-cv-bild.png" alt="Alexander Svensson">
-        <p>My name is Alexander, and I am a 19-year-old fullstack developer with an interest in gaming, programming, and training.
-            My passion for technology started with video games, which led me to study programming. During high school,
-            I discovered that it was web development that truly fascinated me, not game programming.
-            I enjoy creating user-friendly and functional websites that can reach everyone.
-            This interest has led me to specialize as a fullstack developer with a focus on Open Source.</p>
-    </div>
+    <div class="page-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Alexander Svensson</h1>
+            <p class="subtitle">Fullstack Developer</p>
+        </header>
 
-    <div class="section education">
-        <h2>Education</h2>
-        <p>Gymnasiet åk 1 – 3: teknikprogrammet med inriktningen informations och media teknik - 2021-2024</p>
-        <p>Yrkeshögskola: Fullstack Open Source - 2024 - 2026</p>
-    </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- About Me Section -->
+            <section class="section about-section">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="media/profile.jpg" alt="Alexander Svensson" class="profile-img">
+                    <div class="about-text">
+                        <p>My name is Alexander, and I am a 19-year-old fullstack developer with an interest in gaming, programming, and training. My passion for technology started with video games, which led me to study programming.</p>
+                        <p>During high school, I discovered that it was web development that truly fascinated me, not game programming. I enjoy creating user-friendly and functional websites that can reach everyone.</p>
+                        <p>This interest has led me to specialize as a fullstack developer with a focus on Open Source.</p>
+                    </div>
+                </div>
+            </section>
 
-    <div class="section table">
-        <h2>Färdigheter</h2>
-        <table>
-            <tr>
-                <th colspan="2">Färdigheter</th>
-            </tr>
-            <tr>
-                <td>Programmeringsspråk</td>
-                <td>Webbteknologier</td>
-            </tr>
-            <tr>
-                <td>C++</td>
-                <td>Css</td>
-            </tr>
-            <tr>
-                <td>C#</td>
-                <td>html</td>
-            </tr>
-            <tr>
-                <td colspan="2">Javascript</td>
-            </tr>
-        </table>
-    </div>
+            <!-- Education Section -->
+            <section class="section education-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Teknikprogrammet</h3>
+                    <p class="education-duration">2021-2024</p>
+                    <p class="education-description">Inriktning Informations- och medieteknik</p>
+                </div>
+                <div class="education-item">
+                    <h3>Yrkeshögskola</h3>
+                    <p class="education-duration">2024-2026</p>
+                    <p class="education-description">Fullstack Open Source</p>
+                </div>
+            </section>
 
-    <div class="section project">
-        <h2>Project</h2>
-        <p>In this project we were tasked with creating a site where we talked about one of our hobbies</p>
-        <img src="Hobbysida-projekt.png" alt="Picture of my project">
-    </div>
+            <!-- Skills Section -->
+            <section class="section skills-section">
+                <h2>Färdigheter</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Programmeringsspråk</th>
+                                <th>Webbteknologier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>C++</td>
+                                <td>CSS</td>
+                            </tr>
+                            <tr>
+                                <td>C#</td>
+                                <td>HTML</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-    <div class="section video">
-        <h2>This is a video I have watched when I first started to learn html and css</h2>
-        <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw?si=7r_kxguXZZMEGKbP"
-                title="Html and css guide" allowfullscreen></iframe>
+            <!-- Project Section -->
+            <section class="section project-section">
+                <h2>Project</h2>
+                <div class="project-content">
+                    <p>In this project we were tasked with creating a site where we talked about one of our hobbies</p>
+                    <img src="media/project.jpg" alt="Project screenshot" class="project-img">
+                </div>
+            </section>
+
+            <!-- Video Section -->
+            <section class="section video-section">
+                <h2>Learning Resources</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw" 
+                            title="HTML & CSS Full Course for free" 
+                            allowfullscreen></iframe>
+                </div>
+                <p class="video-description">This is a video I have watched when I first started to learn HTML and CSS</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Alexander Svensson. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
