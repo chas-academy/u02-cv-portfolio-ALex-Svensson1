@@ -29,104 +29,106 @@ body {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-.header .subtitle {
+.header .undertext {
   color: #3498db;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.section {
+.sektion {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 25px;
   margin-bottom: 30px;
 }
-.section h2 {
+.sektion h2 {
   color: #2c3e50;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid #f5f5f5;
 }
 
-.about-section .about-content {
+.om-mig .om-mig-innehall {
   display: flex;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
 }
 @media (max-width: 768px) {
-  .about-section .about-content {
+  .om-mig .om-mig-innehall {
     flex-direction: column;
+    align-items: center;
   }
 }
-.about-section .profile-img {
-  width: 250px;
-  height: 250px;
+.om-mig .profilbild {
+  width: 300px;
+  height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
+  border-radius: 8px;
   border: 5px solid #3498db;
 }
-.about-section .about-text {
+.om-mig .om-mig-text {
   flex: 1;
 }
-.about-section .about-text p {
+.om-mig .om-mig-text p {
   margin-bottom: 15px;
 }
 
-.education-item {
+.utbildning-post {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #f5f5f5;
 }
-.education-item:last-child {
+.utbildning-post:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
-.education-item h3 {
+.utbildning-post h3 {
   color: #3498db;
   margin-bottom: 5px;
 }
-.education-item .education-duration {
+.utbildning-post .utbildning-tid {
   color: #666;
   font-style: italic;
   margin-bottom: 5px;
 }
 
-.table-container {
+.tabell-container {
   overflow-x: auto;
   margin-top: 20px;
 }
-.table-container table {
+.tabell-container table {
   width: 100%;
   border-collapse: collapse;
 }
-.table-container table th, .table-container table td {
+.tabell-container table th, .tabell-container table td {
   padding: 12px;
   text-align: left;
   border: 1px solid #ddd;
 }
-.table-container table th {
+.tabell-container table th {
   background-color: #2c3e50;
   color: white;
 }
-.table-container table tr:nth-child(even) {
+.tabell-container table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.project-content {
+.projekt-innehall {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.project-content .project-img {
-  width: 100%;
-  max-height: 400px;
-  -o-object-fit: contain;
-     object-fit: contain;
+.projekt-innehall .projektbild {
+  width: 300px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 8px;
   border: 1px solid #ddd;
+  align-self: center;
 }
 
 .video-container {
@@ -146,13 +148,13 @@ body {
   border: none;
 }
 
-.video-description {
+.video-beskrivning {
   font-style: italic;
   color: #666;
   text-align: center;
 }
 
-.footer {
+.sidfot {
   text-align: center;
   padding: 20px;
   color: #666;
@@ -163,14 +165,18 @@ body {
   .header h1 {
     font-size: 2rem;
   }
-  .header .subtitle {
+  .header .undertext {
     font-size: 1rem;
   }
-  .section {
+  .sektion {
     padding: 20px 15px;
   }
-  .about-section .profile-img {
-    width: 200px;
-    height: 200px;
+  .om-mig .profilbild {
+    width: 250px;
+    height: 400px;
+  }
+  .projekt-innehall .projektbild {
+    width: 250px;
+    height: 125px;
   }
 }/*# sourceMappingURL=style.css.map */
