@@ -18,7 +18,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: $mork-gra;
-    background-color: $ljus-gra;
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
     padding: 0;
 }
 
@@ -26,6 +26,31 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+// Navigering
+.huvudnavigering {
+    background-color: $sekundar-farg;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 20px;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            color: $primar-farg;
+        }
+    }
 }
 
 // Sidhuvud
@@ -48,6 +73,46 @@ body {
     }
 }
 
+// Gridlayout för huvudinnehåll
+.huvudinnehall {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "om-mig utbildning projekt"
+        "om-mig fardigheter video";
+    gap: 30px;
+
+    @media (max-width: $mobil-brytpunkt) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "om-mig"
+            "utbildning"
+            "fardigheter"
+            "projekt"
+            "video";
+    }
+}
+
+.om-mig {
+    grid-area: om-mig;
+}
+
+.utbildning {
+    grid-area: utbildning;
+}
+
+.fardigheter {
+    grid-area: fardigheter;
+}
+
+.projekt {
+    grid-area: projekt;
+}
+
+.video {
+    grid-area: video;
+}
+
 // Gemensamma sektionsstilar
 .sektion {
     background: white;
@@ -65,32 +130,30 @@ body {
 }
 
 // Om mig-sektion
-.om-mig {
-    .om-mig-innehall {
-        display: flex;
-        gap: 30px;
-        align-items: flex-start;
+.om-mig-innehall {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
 
-        @media (max-width: $mobil-brytpunkt) {
-            flex-direction: column;
-            align-items: center;
-        }
+    @media (max-width: $mobil-brytpunkt) {
+        flex-direction: column;
+        align-items: center;
     }
+}
 
-    .profilbild {
-        width: 300px;
-        height: 500px;
-        object-fit: cover;
-        border-radius: $kant-radie;
-        border: 5px solid $primar-farg;
-    }
+.profilbild {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: $kant-radie;
+    border: 5px solid $primar-farg;
+}
 
-    .om-mig-text {
-        flex: 1;
+.om-mig-text {
+    flex: 1;
 
-        p {
-            margin-bottom: 15px;
-        }
+    p {
+        margin-bottom: 15px;
     }
 }
 
@@ -163,7 +226,7 @@ body {
 // Videosektion
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; // 16:9 bildförhållande
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     margin-bottom: 15px;
@@ -195,31 +258,25 @@ body {
 
 // Responsiva anpassningar
 @media (max-width: $mobil-brytpunkt) {
-    .header {
-        h1 {
-            font-size: 2rem;
-        }
-        
-        .undertext {
-            font-size: 1rem;
-        }
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header .undertext {
+        font-size: 1rem;
     }
 
     .sektion {
         padding: 20px 15px;
     }
 
-    .om-mig {
-        .profilbild {
-            width: 250px;
-            height: 400px;
-        }
+    .profilbild {
+        width: 250px;
+        height: 400px;
     }
 
-    .projekt-innehall {
-        .projektbild {
-            width: 250px;
-            height: 125px;
-        }
+    .projektbild {
+        width: 250px;
+        height: 125px;
     }
 }

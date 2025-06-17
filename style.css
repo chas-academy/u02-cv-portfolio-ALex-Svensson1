@@ -8,7 +8,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
   padding: 0;
 }
 
@@ -16,6 +16,27 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.huvudnavigering {
+  background-color: #2c3e50;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.huvudnavigering ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 20px;
+}
+.huvudnavigering a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.huvudnavigering a:hover {
+  color: #3498db;
 }
 
 .header {
@@ -35,6 +56,39 @@ body {
   font-weight: 500;
 }
 
+.huvudinnehall {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "om-mig utbildning projekt" "om-mig fardigheter video";
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .huvudinnehall {
+    grid-template-columns: 1fr;
+    grid-template-areas: "om-mig" "utbildning" "fardigheter" "projekt" "video";
+  }
+}
+
+.om-mig {
+  grid-area: om-mig;
+}
+
+.utbildning {
+  grid-area: utbildning;
+}
+
+.fardigheter {
+  grid-area: fardigheter;
+}
+
+.projekt {
+  grid-area: projekt;
+}
+
+.video {
+  grid-area: video;
+}
+
 .sektion {
   background: white;
   border-radius: 8px;
@@ -49,18 +103,19 @@ body {
   border-bottom: 2px solid #f5f5f5;
 }
 
-.om-mig .om-mig-innehall {
+.om-mig-innehall {
   display: flex;
   gap: 30px;
   align-items: flex-start;
 }
 @media (max-width: 768px) {
-  .om-mig .om-mig-innehall {
+  .om-mig-innehall {
     flex-direction: column;
     align-items: center;
   }
 }
-.om-mig .profilbild {
+
+.profilbild {
   width: 300px;
   height: 500px;
   -o-object-fit: cover;
@@ -68,10 +123,11 @@ body {
   border-radius: 8px;
   border: 5px solid #3498db;
 }
-.om-mig .om-mig-text {
+
+.om-mig-text {
   flex: 1;
 }
-.om-mig .om-mig-text p {
+.om-mig-text p {
   margin-bottom: 15px;
 }
 
@@ -171,11 +227,11 @@ body {
   .sektion {
     padding: 20px 15px;
   }
-  .om-mig .profilbild {
+  .profilbild {
     width: 250px;
     height: 400px;
   }
-  .projekt-innehall .projektbild {
+  .projektbild {
     width: 250px;
     height: 125px;
   }
